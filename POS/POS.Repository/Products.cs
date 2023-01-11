@@ -19,7 +19,7 @@ namespace POS.DataContext
 
         [Column("category_id")]
         public int CategoryId { get; set; }
-        public Categories Categoroy { get; set; }
+        public Categories Category { get; set; }
 
         [Column("quantity_per_unit")]
         public string QuantityPerUnit { get; set; }

@@ -5,9 +5,7 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POS.Web", "POS.Web\POS.Web.csproj", "{62079295-BC9B-4E65-B526-744C0C1D527B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POS.Service", "POS.Service\POS.Service.csproj", "{72993AC8-2B0E-4C0F-82E5-D5F67476FCE8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POS.DataContext", "POS.Repository\POS.DataContext.csproj", "{11EAEF1D-8D9A-459E-B8C4-B0D4D1C9073F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POS.Service", "POS.Service\POS.Service.csproj", "{72993AC8-2B0E-4C0F-82E5-D5F67476FCE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{72993AC8-2B0E-4C0F-82E5-D5F67476FCE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72993AC8-2B0E-4C0F-82E5-D5F67476FCE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72993AC8-2B0E-4C0F-82E5-D5F67476FCE8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{11EAEF1D-8D9A-459E-B8C4-B0D4D1C9073F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{11EAEF1D-8D9A-459E-B8C4-B0D4D1C9073F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{11EAEF1D-8D9A-459E-B8C4-B0D4D1C9073F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{11EAEF1D-8D9A-459E-B8C4-B0D4D1C9073F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
