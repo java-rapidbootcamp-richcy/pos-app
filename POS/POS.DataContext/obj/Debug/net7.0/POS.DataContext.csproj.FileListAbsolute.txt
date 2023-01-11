@@ -1,0 +1,12 @@
+D:\Kerja\RapidTech\java\pos-app\POS\POS.DataContext\bin\Debug\net7.0\POS.DataContext.deps.json
+D:\Kerja\RapidTech\java\pos-app\POS\POS.DataContext\bin\Debug\net7.0\POS.DataContext.dll
+D:\Kerja\RapidTech\java\pos-app\POS\POS.DataContext\bin\Debug\net7.0\POS.DataContext.pdb
+D:\Kerja\RapidTech\java\pos-app\POS\POS.DataContext\obj\Debug\net7.0\POS.DataContext.csproj.AssemblyReference.cache
+D:\Kerja\RapidTech\java\pos-app\POS\POS.DataContext\obj\Debug\net7.0\POS.DataContext.GeneratedMSBuildEditorConfig.editorconfig
+D:\Kerja\RapidTech\java\pos-app\POS\POS.DataContext\obj\Debug\net7.0\POS.DataContext.AssemblyInfoInputs.cache
+D:\Kerja\RapidTech\java\pos-app\POS\POS.DataContext\obj\Debug\net7.0\POS.DataContext.AssemblyInfo.cs
+D:\Kerja\RapidTech\java\pos-app\POS\POS.DataContext\obj\Debug\net7.0\POS.DataContext.csproj.CoreCompileInputs.cache
+D:\Kerja\RapidTech\java\pos-app\POS\POS.DataContext\obj\Debug\net7.0\POS.DataContext.dll
+D:\Kerja\RapidTech\java\pos-app\POS\POS.DataContext\obj\Debug\net7.0\refint\POS.DataContext.dll
+D:\Kerja\RapidTech\java\pos-app\POS\POS.DataContext\obj\Debug\net7.0\POS.DataContext.pdb
+D:\Kerja\RapidTech\java\pos-app\POS\POS.DataContext\obj\Debug\net7.0\ref\POS.DataContext.dll

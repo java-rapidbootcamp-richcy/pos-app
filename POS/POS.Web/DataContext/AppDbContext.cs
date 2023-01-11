@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using POS.Repository;
+using POS.DataContext;
 
 namespace POS.Web.DataContext
 {

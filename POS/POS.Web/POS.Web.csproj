@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\POS.DataContext\POS.DataContext.csproj" />
     <ProjectReference Include="..\POS.Service\POS.Service.csproj" />
   </ItemGroup>
 
