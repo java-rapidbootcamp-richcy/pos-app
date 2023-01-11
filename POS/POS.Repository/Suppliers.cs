@@ -7,7 +7,7 @@ using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace POS.Repository
+namespace POS.DataContext
 {
     [Table("table_suppliers")]
     public class Suppliers
