@@ -359,6 +359,11 @@
       "POS.DataContext/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.12",
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.12",
+          "Pomelo.EntityFrameworkCore.MySql": "6.0.2"
+        },
         "compile": {
           "bin/placeholder/POS.DataContext.dll": {}
         },
@@ -372,6 +377,7 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.12",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.12",
+          "POS.DataContext": "1.0.0",
           "Pomelo.EntityFrameworkCore.MySql": "6.0.2"
         },
         "compile": {

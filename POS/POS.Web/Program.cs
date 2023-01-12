@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using POS.Web.DataContext;
+using POS.DataContext;
 
 var builder = WebApplication.CreateBuilder(args);
 

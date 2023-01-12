@@ -1,11 +1,20 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using POS.DataContext;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace POS.Web.DataContext
+namespace POS.DataContext
 {
+    public class Startup
+    {
+        public void ConfigureServices(IServiceCollection services)
+            => services.AddDbContext<AppDbContext>();
+
+    }
     public class AppDbContext : DbContext
     {
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        {
+
+        }
         public DbSet<Categories> CategoryEntities => Set<Categories>();
         public DbSet<Customers> CustomerEntities => Set<Customers>();
         public DbSet<Employees> EmployeeEntities => Set<Employees>();

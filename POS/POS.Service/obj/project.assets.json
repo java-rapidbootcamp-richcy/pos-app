@@ -355,6 +355,21 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "POS.DataContext/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.12",
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.12",
+          "Pomelo.EntityFrameworkCore.MySql": "6.0.2"
+        },
+        "compile": {
+          "bin/placeholder/POS.DataContext.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/POS.DataContext.dll": {}
+        }
       }
     }
   },
@@ -813,6 +828,11 @@
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "POS.DataContext/1.0.0": {
+      "type": "project",
+      "path": "../POS.DataContext/POS.DataContext.csproj",
+      "msbuildProject": "../POS.DataContext/POS.DataContext.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -820,6 +840,7 @@
       "Microsoft.EntityFrameworkCore >= 6.0.12",
       "Microsoft.EntityFrameworkCore.Relational >= 6.0.12",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.12",
+      "POS.DataContext >= 1.0.0",
       "Pomelo.EntityFrameworkCore.MySql >= 6.0.2"
     ]
   },
@@ -849,7 +870,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Kerja\\RapidTech\\java\\pos-app\\POS\\POS.DataContext\\POS.DataContext.csproj": {
+              "projectPath": "D:\\Kerja\\RapidTech\\java\\pos-app\\POS\\POS.DataContext\\POS.DataContext.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -10,3 +10,5 @@ D:\Kerja\RapidTech\java\pos-app\POS\POS.DataContext\obj\Debug\net7.0\POS.DataCon
 D:\Kerja\RapidTech\java\pos-app\POS\POS.DataContext\obj\Debug\net7.0\refint\POS.DataContext.dll
 D:\Kerja\RapidTech\java\pos-app\POS\POS.DataContext\obj\Debug\net7.0\POS.DataContext.pdb
 D:\Kerja\RapidTech\java\pos-app\POS\POS.DataContext\obj\Debug\net7.0\ref\POS.DataContext.dll
+D:\Kerja\RapidTech\java\pos-app\POS\POS.DataContext\bin\Debug\net7.0\POS.DataContext.runtimeconfig.json
+D:\Kerja\RapidTech\java\pos-app\POS\POS.DataContext\obj\Debug\net7.0\POS.DataContext.genruntimeconfig.cache
