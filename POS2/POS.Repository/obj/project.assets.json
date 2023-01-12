@@ -355,6 +355,16 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "POS.ViewModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/POS.ViewModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/POS.ViewModel.dll": {}
+        }
       }
     }
   },
@@ -813,6 +823,11 @@
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "POS.ViewModel/1.0.0": {
+      "type": "project",
+      "path": "../POS.ViewModel/POS.ViewModel.csproj",
+      "msbuildProject": "../POS.ViewModel/POS.ViewModel.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -820,6 +835,7 @@
       "Microsoft.EntityFrameworkCore >= 6.0.12",
       "Microsoft.EntityFrameworkCore.Relational >= 6.0.12",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.12",
+      "POS.ViewModel >= 1.0.0",
       "Pomelo.EntityFrameworkCore.MySql >= 6.0.2"
     ]
   },
@@ -849,7 +865,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Kerja\\RapidTech\\java\\pos-app\\POS2\\POS.ViewModel\\POS.ViewModel.csproj": {
+              "projectPath": "D:\\Kerja\\RapidTech\\java\\pos-app\\POS2\\POS.ViewModel\\POS.ViewModel.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

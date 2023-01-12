@@ -362,6 +362,7 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.12",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.12",
+          "POS.ViewModel": "1.0.0",
           "Pomelo.EntityFrameworkCore.MySql": "6.0.2"
         },
         "compile": {
@@ -369,6 +370,16 @@
         },
         "runtime": {
           "bin/placeholder/POS.Repository.dll": {}
+        }
+      },
+      "POS.ViewModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/POS.ViewModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/POS.ViewModel.dll": {}
         }
       }
     }
@@ -833,6 +844,11 @@
       "type": "project",
       "path": "../POS.Repository/POS.Repository.csproj",
       "msbuildProject": "../POS.Repository/POS.Repository.csproj"
+    },
+    "POS.ViewModel/1.0.0": {
+      "type": "project",
+      "path": "../POS.ViewModel/POS.ViewModel.csproj",
+      "msbuildProject": "../POS.ViewModel/POS.ViewModel.csproj"
     }
   },
   "projectFileDependencyGroups": {

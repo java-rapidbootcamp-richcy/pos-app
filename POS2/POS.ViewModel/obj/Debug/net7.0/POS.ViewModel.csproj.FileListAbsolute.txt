@@ -1,0 +1,12 @@
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.ViewModel\bin\Debug\net7.0\POS.ViewModel.deps.json
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.ViewModel\bin\Debug\net7.0\POS.ViewModel.dll
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.ViewModel\bin\Debug\net7.0\POS.ViewModel.pdb
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.ViewModel\obj\Debug\net7.0\POS.ViewModel.csproj.AssemblyReference.cache
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.ViewModel\obj\Debug\net7.0\POS.ViewModel.GeneratedMSBuildEditorConfig.editorconfig
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.ViewModel\obj\Debug\net7.0\POS.ViewModel.AssemblyInfoInputs.cache
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.ViewModel\obj\Debug\net7.0\POS.ViewModel.AssemblyInfo.cs
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.ViewModel\obj\Debug\net7.0\POS.ViewModel.csproj.CoreCompileInputs.cache
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.ViewModel\obj\Debug\net7.0\POS.ViewModel.dll
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.ViewModel\obj\Debug\net7.0\refint\POS.ViewModel.dll
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.ViewModel\obj\Debug\net7.0\POS.ViewModel.pdb
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.ViewModel\obj\Debug\net7.0\ref\POS.ViewModel.dll

@@ -28,8 +28,13 @@ namespace pos_app_2.Controllers
         [HttpPost]
         public IActionResult Save([Bind("CategoryName, Description")] CategoryEntity request)
         {
-            _service.Add(request);
-            return Redirect("List");
+            if (ModelState.IsValid)
+            {
+                _service.Add(request);
+                return Redirect("List");
+            }
+            return View("Add", request);
+           
         }
 
         [HttpGet]

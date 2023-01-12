@@ -41,3 +41,5 @@ D:\Kerja\RapidTech\java\pos-app\POS2\pos-app-2\obj\Debug\net7.0\refint\POS.Web.d
 D:\Kerja\RapidTech\java\pos-app\POS2\pos-app-2\obj\Debug\net7.0\POS.Web.pdb
 D:\Kerja\RapidTech\java\pos-app\POS2\pos-app-2\obj\Debug\net7.0\POS.Web.genruntimeconfig.cache
 D:\Kerja\RapidTech\java\pos-app\POS2\pos-app-2\obj\Debug\net7.0\ref\POS.Web.dll
+D:\Kerja\RapidTech\java\pos-app\POS2\pos-app-2\bin\Debug\net7.0\POS.ViewModel.dll
+D:\Kerja\RapidTech\java\pos-app\POS2\pos-app-2\bin\Debug\net7.0\POS.ViewModel.pdb

@@ -13,6 +13,7 @@
           "Microsoft.EntityFrameworkCore.Tools": "6.0.12",
           "POS.Repository": "1.0.0",
           "POS.Service": "1.0.0",
+          "POS.ViewModel": "1.0.0",
           "Pomelo.EntityFrameworkCore.MySql": "6.0.2"
         },
         "runtime": {
@@ -165,6 +166,7 @@
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.12",
           "Microsoft.EntityFrameworkCore.Relational": "6.0.12",
+          "POS.ViewModel": "1.0.0",
           "Pomelo.EntityFrameworkCore.MySql": "6.0.2"
         },
         "runtime": {
@@ -180,6 +182,11 @@
         },
         "runtime": {
           "POS.Service.dll": {}
+        }
+      },
+      "POS.ViewModel/1.0.0": {
+        "runtime": {
+          "POS.ViewModel.dll": {}
         }
       }
     }
@@ -343,6 +350,11 @@
       "sha512": ""
     },
     "POS.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "POS.ViewModel/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

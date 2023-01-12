@@ -12,3 +12,6 @@ D:\Kerja\RapidTech\java\pos-app\POS2\POS.Repository\obj\Debug\net7.0\refint\POS.
 D:\Kerja\RapidTech\java\pos-app\POS2\POS.Repository\obj\Debug\net7.0\POS.Repository.pdb
 D:\Kerja\RapidTech\java\pos-app\POS2\POS.Repository\obj\Debug\net7.0\POS.Repository.genruntimeconfig.cache
 D:\Kerja\RapidTech\java\pos-app\POS2\POS.Repository\obj\Debug\net7.0\ref\POS.Repository.dll
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.Repository\bin\Debug\net7.0\POS.ViewModel.dll
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.Repository\bin\Debug\net7.0\POS.ViewModel.pdb
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.Repository\obj\Debug\net7.0\POS.Repository.csproj.CopyComplete
