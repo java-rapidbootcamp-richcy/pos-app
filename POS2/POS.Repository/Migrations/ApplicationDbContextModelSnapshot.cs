@@ -88,8 +88,9 @@ namespace POS.Repository.Migrations
                         .HasColumnType("longtext")
                         .HasColumnName("phone");
 
-                    b.Property<int>("PostalCode")
-                        .HasColumnType("int")
+                    b.Property<string>("PostalCode")
+                        .IsRequired()
+                        .HasColumnType("longtext")
                         .HasColumnName("postal_code");
 
                     b.Property<string>("Region")

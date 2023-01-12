@@ -2,19 +2,17 @@
 using POS.Repository;
 using POS.Service;
 using POS.ViewModel;
-using pos_app_2.Models;
-using System.Diagnostics;
+using System.Reflection.Metadata.Ecma335;
 
 namespace pos_app_2.Controllers
 {
-    public class CategoryController : Controller
+    public class CustomerController : Controller
     {
-        private readonly CategoryService _service;
-        public CategoryController(ApplicationDbContext context)
+        private readonly CustomerService _service;
+        public CustomerController(ApplicationDbContext context)
         {
-            _service = new CategoryService(context);
+            _service = new CustomerService(context);
         }
-
         public IActionResult List()
         {
             var entity = _service.Get();
@@ -26,16 +24,16 @@ namespace pos_app_2.Controllers
         {
             return View();
         }
+
         [HttpPost]
-        public IActionResult Save([Bind("CategoryName, Description")] CategoryModel request)
+        public IActionResult Save([Bind("CompanyName, ContactName, ContactTitle, Address, City, Region, PostalCode, Country, Phone, Fax")]CustomerModel request)
         {
             if (ModelState.IsValid)
             {
-                _service.Add(new CategoryEntity(request));
+                _service.Add(new CustomerEntity(request));
                 return Redirect("List");
             }
             return View("Add", request);
-           
         }
 
         [HttpGet]
@@ -53,7 +51,7 @@ namespace pos_app_2.Controllers
         }
 
         [HttpPost]
-        public IActionResult Update([Bind("Id, CategoryName, Description")] CategoryEntity request)
+        public IActionResult Update([Bind("Id, CompanyName, ContactName, ContactTitle, Address, City, Region, PostalCode, Country, Phone, Fax")] CustomerEntity request)
         {
             _service.Update(request);
             return Redirect("List");
@@ -63,7 +61,7 @@ namespace pos_app_2.Controllers
         public IActionResult Delete(int? id)
         {
             _service.Delete(id);
-            return Redirect("/Category/List");
+            return Redirect("/Customer/List");
         }
     }
 }

@@ -1,0 +1,73 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model POS.Repository.CustomerEntity
+
+@{
+    ViewData["Title"] = "Edit Customer";
+}
+
+<h2>Edit Customer</h2>
+
+<form asp-controller="Customer" asp-action="Update" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="CompanyName">Name</label>
+        <input asp-for="CompanyName" class="form-control" />
+        <span asp-validation-for="CompanyName" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ContactName">ContactName</label>
+        <textarea asp-for="ContactName" class="form-control"></textarea>
+        <span asp-validation-for="ContactName" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ContactTitle">ContactTitle</label>
+        <textarea asp-for="ContactTitle" class="form-control"></textarea>
+        <span asp-validation-for="ContactTitle" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Address">Address</label>
+        <textarea asp-for="Address" class="form-control"></textarea>
+        <span asp-validation-for="Address" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="City">City</label>
+        <textarea asp-for="City" class="form-control"></textarea>
+        <span asp-validation-for="City" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Region">Region</label>
+        <textarea asp-for="Region" class="form-control"></textarea>
+        <span asp-validation-for="Region" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="PostalCode">PostalCode</label>
+        <textarea asp-for="PostalCode" class="form-control"></textarea>
+        <span asp-validation-for="PostalCode" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Country">Country</label>
+        <textarea asp-for="Country" class="form-control"></textarea>
+        <span asp-validation-for="Country" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Phone">Phone</label>
+        <textarea asp-for="Phone" class="form-control"></textarea>
+        <span asp-validation-for="Phone" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Fax">Fax</label>
+        <textarea asp-for="Fax" class="form-control"></textarea>
+        <span asp-validation-for="Fax" class="text-danger" />
+    </div>
+    <div class="pt-2 pb-2">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

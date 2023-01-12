@@ -48,7 +48,8 @@ namespace POS.Repository.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     region = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    postal_code = table.Column<int>(type: "int", nullable: false),
+                    postal_code = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     country = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     phone = table.Column<string>(type: "longtext", nullable: false)

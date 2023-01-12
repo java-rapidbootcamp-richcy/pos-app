@@ -11,7 +11,7 @@ using POS.Repository;
 namespace POS.Repository.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230112005539_TestMigration")]
+    [Migration("20230112084152_TestMigration")]
     partial class TestMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -90,8 +90,9 @@ namespace POS.Repository.Migrations
                         .HasColumnType("longtext")
                         .HasColumnName("phone");
 
-                    b.Property<int>("PostalCode")
-                        .HasColumnType("int")
+                    b.Property<string>("PostalCode")
+                        .IsRequired()
+                        .HasColumnType("longtext")
                         .HasColumnName("postal_code");
 
                     b.Property<string>("Region")

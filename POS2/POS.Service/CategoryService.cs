@@ -12,32 +12,32 @@ namespace POS.Service
 
         public List<CategoryEntity> Get()
         {
-            return _context.categoryEntities.ToList();
+            return _context.CategoryEntities.ToList();
         }
 
-        public void Add(CategoryEntity category)
+        public void Add(CategoryEntity entity)
         {
-            _context.categoryEntities.Add(category);
+            _context.CategoryEntities.Add(entity);
             _context.SaveChanges();
         }
 
         public CategoryEntity View(int? id)
         {
-            var category = _context.categoryEntities.Find(id);
-            return category;
+            var entity = _context.CategoryEntities.Find(id);
+            return entity;
         }
 
-        public void Update(CategoryEntity category)
+        public void Update(CategoryEntity entity)
         {
-            _context.categoryEntities.Update(category);
+            _context.CategoryEntities.Update(entity);
             _context.SaveChanges();
         }
 
         public void Delete(int? id)
         {
-            var category = View(id);
+            var entity = View(id);
 
-            _context.categoryEntities.Remove(category);
+            _context.CategoryEntities.Remove(entity);
             _context.SaveChanges();
         }
 
