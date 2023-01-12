@@ -4,7 +4,7 @@ using POS.DataContext;
 var builder = WebApplication.CreateBuilder(args);
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<AppDbContext>(
+builder.Services.AddDbContext<POS.DataContext.AppDbContext>(
     options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
     );
 

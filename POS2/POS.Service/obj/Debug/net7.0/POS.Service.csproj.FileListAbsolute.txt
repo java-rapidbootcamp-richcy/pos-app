@@ -1,0 +1,17 @@
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.Service\bin\Debug\net7.0\POS.Service.deps.json
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.Service\bin\Debug\net7.0\POS.Service.runtimeconfig.json
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.Service\bin\Debug\net7.0\POS.Service.dll
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.Service\bin\Debug\net7.0\POS.Service.pdb
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.Service\bin\Debug\net7.0\POS.Repository.dll
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.Service\bin\Debug\net7.0\POS.Repository.pdb
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.Service\obj\Debug\net7.0\POS.Service.csproj.AssemblyReference.cache
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.Service\obj\Debug\net7.0\POS.Service.GeneratedMSBuildEditorConfig.editorconfig
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.Service\obj\Debug\net7.0\POS.Service.AssemblyInfoInputs.cache
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.Service\obj\Debug\net7.0\POS.Service.AssemblyInfo.cs
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.Service\obj\Debug\net7.0\POS.Service.csproj.CoreCompileInputs.cache
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.Service\obj\Debug\net7.0\POS.Service.csproj.CopyComplete
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.Service\obj\Debug\net7.0\POS.Service.dll
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.Service\obj\Debug\net7.0\refint\POS.Service.dll
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.Service\obj\Debug\net7.0\POS.Service.pdb
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.Service\obj\Debug\net7.0\POS.Service.genruntimeconfig.cache
+D:\Kerja\RapidTech\java\pos-app\POS2\POS.Service\obj\Debug\net7.0\ref\POS.Service.dll
