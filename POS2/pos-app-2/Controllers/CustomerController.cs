@@ -26,6 +26,7 @@ namespace pos_app_2.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Save([Bind("CompanyName, ContactName, ContactTitle, Address, City, Region, PostalCode, Country, Phone, Fax")]CustomerModel request)
         {
             if (ModelState.IsValid)
@@ -51,10 +52,15 @@ namespace pos_app_2.Controllers
         }
 
         [HttpPost]
-        public IActionResult Update([Bind("Id, CompanyName, ContactName, ContactTitle, Address, City, Region, PostalCode, Country, Phone, Fax")] CustomerEntity request)
+        [ValidateAntiForgeryToken]
+        public IActionResult Update([Bind("Id, CompanyName, ContactName, ContactTitle, Address, City, Region, PostalCode, Country, Phone, Fax")] CustomerModel request)
         {
-            _service.Update(request);
-            return Redirect("List");
+            if (ModelState.IsValid)
+            {
+                _service.Update(request);
+                return Redirect("List");
+            }
+            return View("Edit", request);
         }
 
         [HttpGet]
