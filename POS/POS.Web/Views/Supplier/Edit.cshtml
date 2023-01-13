@@ -1,0 +1,75 @@
+﻿@model POS.ViewModel.SupplierModel
+
+@{
+    ViewData["Title"] = "Supplier Edit";
+}
+
+<h2>Edit Supplier</h2>
+<form asp-controller="Supplier" asp-action="Update" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="CompanyName">CompanyName</label>
+        <input asp-for="CompanyName" class="form-control" />
+        <span asp-validation-for="CompanyName" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ContactName">ContactName</label>
+        <input asp-for="ContactName" class="form-control" />
+        <span asp-validation-for="ContactName" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ContactTitle">ContactTitle</label>
+        <input asp-for="ContactTitle" class="form-control" />
+        <span asp-validation-for="ContactTitle" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Address">Address</label>
+        <textarea asp-for="Address" class="form-control"></textarea>
+        <span asp-validation-for="Address" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="City">City</label>
+        <input asp-for="City" class="form-control" />
+        <span asp-validation-for="City" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Region">Region</label>
+        <input asp-for="Region" class="form-control" />
+        <span asp-validation-for="Region" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="PostalCode">PostalCode</label>
+        <input asp-for="PostalCode" class="form-control" />
+        <span asp-validation-for="PostalCode" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Country">Country</label>
+        <input asp-for="Country" class="form-control" />
+        <span asp-validation-for="Country" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Phone">Phone</label>
+        <input asp-for="Phone" class="form-control" />
+        <span asp-validation-for="Phone" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Fax">Fax</label>
+        <input asp-for="Fax" class="form-control">
+        <span asp-validation-for="Fax" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label asp-for="HomePage">HomePage</label>
+        <input asp-for="HomePage" class="form-control" />
+        <span asp-validation-for="HomePage" class="text-danger" />
+    </div>
+    <div class="pt-2 pb-2">
+        <button type="submit" class="btn btn-sm btn-primary">Update</button>
+    </div>
+
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

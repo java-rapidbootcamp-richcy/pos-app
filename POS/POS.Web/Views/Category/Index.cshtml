@@ -1,14 +1,16 @@
-﻿@model IEnumerable<POS.DataContext.Categories>
-
+﻿@model IEnumerable<POS.Repository.CategoryEntity>
 @{
-    ViewData["Title"] = "Category";
+    ViewBag.Title = "Category";
+    Layout = "_Layout";
 }
-
-<h2>Category List</h2>
+<h2>Category</h2>
+<div class="pt-2 pb-2">
+    <a asp-action="Add" class="btn btn-primary" role="button" id="btn-add">Add Category </a>
+</div>
 <table class="table table-responsive">
     <thead>
         <tr>
-            <th>Category ID</th>
+            <th>Id</th>
             <th>Category Name</th>
             <th>Description</th>
             <th>Action</th>
@@ -18,16 +20,52 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>@item.CategoryId</td>
+                <td>@item.Id</td>
                 <td>@item.CategoryName</td>
                 <td>@item.Description</td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.CategoryId" class="btn btn-sm btn-warning">Edit</a>
-                    <a asp-action="Details" asp-route-id="@item.CategoryId" class="btn btn-sm btn-success">View</a>
-                    <a asp-action="Delete" asp-route-id="@item.CategoryId" class="btn btn-sm btn-danger">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-success">View</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
-<a asp-action="Add" class="btn btn-sm btn-primary">Add</a>
+
+<div id="my-modal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Modal body text goes here.</p>
+            </div>
+       
+        </div>
+    </div>
+</div>
+
+@section Scripts
+    {
+    <script type="text/javascript">    
+        $("#btn-add").on("click", function (e) {
+                e.preventDefault();
+                //alert("Ah ... kamu kok sentuh aku");
+                $.ajax({
+                    url:"/Category/AddModal",
+                    type:"GET",
+                    dataType:"html",
+                    success:function(data){
+                        $("#my-modal").find(".modal-body").html(data);
+                    $("#my-modal").modal("show");
+                }
+                });
+                
+            });
+    </script>
+}
+
+

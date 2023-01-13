@@ -1,0 +1,51 @@
+﻿@model POS.ViewModel.ProductModel
+
+@{
+    ViewData["Title"] = "Product Detail";
+}
+
+<h2>Product Detail</h2>
+<table class="table tab-content">
+    <tbody>
+        <tr>
+            <th>ID</th>
+            <td>@Model.Id</td>
+        </tr>
+        <tr>
+            <th>Product Name</th>
+            <td>@Model.ProductName</td>
+        </tr>
+        <tr>
+            <th>Supplier</th>
+            <td>@Model.SupplierId</td>
+        </tr>
+        <tr>
+            <th>Category</th>
+            <td>@Model.CategoryId</td>
+        </tr>
+        <tr>
+            <th>Quantity Per Unit</th>
+            <td>@Model.QuantityPerUnit</td>
+        </tr>
+        <tr>
+            <th>Unit Price</th>
+            <td>@Model.UnitPrice</td>
+        </tr>
+        <tr>
+            <th>Unit In Stock</th>
+            <td>@Model.UnitInStock</td>
+        </tr>
+        <tr>
+            <th>Unit On Order</th>
+            <td>@Model.UnitOnOrder</td>
+        </tr>
+        <tr>
+            <th>Reorder Level</th>
+            <td>@Model.ReorderLevel</td>
+        </tr>
+        <tr>
+            <th>Discontinued</th>
+            <td>@Model.Discontinued</td>
+        </tr>
+    </tbody>
+</table>

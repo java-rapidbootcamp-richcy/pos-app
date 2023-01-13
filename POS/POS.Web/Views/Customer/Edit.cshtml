@@ -1,0 +1,60 @@
+﻿@model POS.ViewModel.CustomerModel
+
+@{
+    ViewData["Title"] = "Customer Edit";
+}
+
+<h2>Edit Customer</h2>
+<form asp-controller="Customer" asp-action="Update" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="CompanyName">Company Name</label>
+        <input asp-for="CompanyName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ContactName">Contact Name</label>
+        <input asp-for="ContactName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ContactTitle">Contact Name</label>
+        <input asp-for="ContactTitle" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Address">Address</label>
+        <textarea asp-for="Address" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="City">City</label>
+        <input asp-for="City" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Region">Region</label>
+        <input asp-for="Region" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="PostalCode">Postal Code</label>
+        <input asp-for="PostalCode" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Country">Country</label>
+        <input asp-for="Country" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Phone">Phone</label>
+        <input asp-for="Phone" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Fax">Fax</label>
+        <input asp-for="Fax" class="form-control" />
+    </div>
+    <div class="pt-2 pb-2">
+        <button type="submit" class="btn btn-sm btn-primary">Update</button>
+    </div>
+    
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
