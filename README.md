@@ -1,2 +1,2 @@
 # pos-app
-pos app .net
+pos app dotnet
