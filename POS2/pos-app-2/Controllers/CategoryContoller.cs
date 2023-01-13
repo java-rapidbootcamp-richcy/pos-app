@@ -26,6 +26,13 @@ namespace pos_app_2.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public IActionResult AddModal()
+        {
+            return PartialView("_Add");
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Save([Bind("CategoryName, Description")] CategoryModel request)
