@@ -27,6 +27,7 @@ namespace pos_app_2.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Save([Bind("CategoryName, Description")] CategoryModel request)
         {
             if (ModelState.IsValid)
@@ -53,10 +54,15 @@ namespace pos_app_2.Controllers
         }
 
         [HttpPost]
-        public IActionResult Update([Bind("Id, CategoryName, Description")] CategoryEntity request)
+        [ValidateAntiForgeryToken]
+        public IActionResult Update([Bind("Id, CategoryName, Description")] CategoryModel request)
         {
-            _service.Update(request);
-            return Redirect("List");
+            if (ModelState.IsValid)
+            {
+                _service.Update(request);
+                return Redirect("List");
+            }
+            return View("Edit", request);
         }
 
         [HttpGet]
