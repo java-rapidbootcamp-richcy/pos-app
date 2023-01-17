@@ -1,68 +1,62 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace POS.Repository
+namespace POS.ViewModel
 {
-    [Table("tbl_employees")]
-    public class EmployeesEntity
+    public class EmployeeModel
     {
-        [Key]
-        [Column("id")]
         public int Id { get; set; }
 
-        [Column("last_name")]
+        [Required]
         public string LastName { get; set; }
 
-        [Column("first_name")]
+        [Required]
         public string FirstName { get; set; }
 
-        [Column("title")]
+        [Required]
         public string Title { get; set; }
 
-        [Column("title_of_courtesy")]
+        [Required]
         public string TitleOfCourtesy { get; set; }
 
-        [Column("birth_date")]
+        [Required]
         public DateTime BirthDate { get; set; }
 
-        [Column("hire_date")]
+        [Required]
         public DateTime HireDate { get; set; }
 
-        [Column("address")]
+        [Required]
         public string Address { get; set; }
 
-        [Column("city")]
+        [Required]
         public string City { get; set; }
 
-        [Column("region")]
+        [Required]
         public string Region { get; set; }
 
-        [Column("postal_code")]
+        [Required]
         public int PostalCode { get; set; }
 
-        [Column("country")]
+        [Required]
         public string Country { get; set; }
 
-        [Column("home_phone")]
+        [Required]
         public string HomePhone { get; set; }
 
-        [Column("extension")]
+        [Required]
         public string Extension { get; set; }
 
-        [Column("notes")]
+        [Required]
         public string Notes { get; set; }
 
-        [Column("reports_to")]
+        [Required]
         public int ReportsTo { get; set; }
 
-        [Column("photo_path")]
+        [Required]
         public string PhotoPath { get; set; }
-
-        public ICollection<OrdersEntity> ordersEntities { get; set; }
     }
 }

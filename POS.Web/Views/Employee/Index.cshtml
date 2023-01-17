@@ -1,0 +1,100 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model IEnumerable<POS.Repository.EmployeeEntity>
+@{
+    ViewBag.Title = "Employee";
+    Layout = "_Layout";
+}
+<h2>Employee</h2>
+<div class="pt-2 pb-2">
+    <a asp-action="_Add" class="btn btn-primary" role="button" id="btn-add">Add Employee</a>
+</div>
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>LastName</th>
+            <th>FirstName</th>
+            <th>Title</th>
+            <th>TitleOfCourtesy</th>
+            <th>BirthDate</th>
+            <th>HireDate</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Region</th>
+            <th>PostalCode</th>
+            <th>Country</th>
+            <th>HomePhone</th>
+            <th>Extension</th>
+            <th>Notes</th>
+            <th>ReportsTo</th>
+            <th>PhotoPath</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.LastName</td>
+                <td>@item.FirstName</td>
+                <td>@item.Title</td>
+                <td>@item.TitleOfCourtesy</td>
+                <td>@item.BirthDate</td>
+                <td>@item.HireDate</td>
+                <td>@item.Address</td>
+                <td>@item.City</td>
+                <td>@item.Region</td>
+                <td>@item.PostalCode</td>
+                <td>@item.Country</td>
+                <td>@item.HomePhone</td>
+                <td>@item.Extension</td>
+                <td>@item.Notes</td>
+                <td>@item.ReportsTo</td>
+                <td>@item.PhotoPath</td>
+                <td>Action</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-success">View</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div id="my-modal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Modal body text goes here.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+    {
+    <script type="text/javascript">
+        $("#btn-add").on("click", function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: "/Employee/AddModal",
+                type: "GET",
+                dataType: "html",
+                success: function (data) {
+                    $("#my-modal").find(".modal-body").html(data);
+                    $("#my-modal").modal("show");
+                }
+            });
+
+        });
+    </script>
+}
+

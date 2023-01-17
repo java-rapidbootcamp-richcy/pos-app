@@ -1,0 +1,79 @@
+﻿@model POS.ViewModel.EmployeeModel
+
+@{
+    ViewData["Title"] = "Employee Detail";
+}
+
+<h2>Employee Detail</h2>
+<table class="table tab-content">
+    <tbody>
+        <tr>
+            <th>ID</th>
+            <td>@Model.Id</td>
+        </tr>
+        <tr>
+            <th>LastName</th>
+            <td>@Model.LastName</td>
+        </tr>
+        <tr>
+            <th>FirstName</th>
+            <td>@Model.FirstName</td>
+        </tr>
+        <tr>
+            <th>Title</th>
+            <td>@Model.Title</td>
+        </tr>
+        <tr>
+            <th>TitleOfCourtesy</th>
+            <td>@Model.TitleOfCourtesy</td>
+        </tr>
+        <tr>
+            <th>BirthDate</th>
+            <td>@Model.BirthDate</td>
+        </tr>
+        <tr>
+            <th>HireDate</th>
+            <td>@Model.HireDate</td>
+        </tr>
+        <tr>
+            <th>Address</th>
+            <td>@Model.Address</td>
+        </tr>
+        <tr>
+            <th>City</th>
+            <td>@Model.City</td>
+        </tr>
+        <tr>
+            <th>Region</th>
+            <td>@Model.Region</td>
+        </tr>
+        <tr>
+            <th>PostalCode</th>
+            <td>@Model.PostalCode</td>
+        </tr>
+        <tr>
+            <th>Country</th>
+            <td>@Model.Country</td>
+        </tr>
+        <tr>
+            <th>HomePhone</th>
+            <td>@Model.HomePhone</td>
+        </tr>
+         <tr>
+            <th>Extension</th>
+            <td>@Model.Extension</td>
+        </tr>
+         <tr>
+            <th>Notes</th>
+            <td>@Model.Notes</td>
+        </tr>
+        <tr>
+            <th>ReportsTo</th>
+            <td>@Model.ReportsTo</td>
+        </tr>
+        <tr>
+            <th>PhotoPath</th>
+            <td>@Model.PhotoPath</td>
+        </tr>
+    </tbody>
+</table>

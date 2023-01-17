@@ -23,7 +23,7 @@ namespace POS.Repository
         [Column("employee_id")]
         public int EmployeeId { get; set; }*/
 
-        public EmployeesEntity Employees { get; set; }
+        public EmployeeEntity Employees { get; set; }
 
         [Column("order_date")]
         public DateTime OrderDate { get; set; }

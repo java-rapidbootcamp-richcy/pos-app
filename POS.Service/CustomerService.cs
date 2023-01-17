@@ -61,22 +61,22 @@ namespace POS.Service
 
         public CustomerModel View(int? id)
         {
-            var customers = _context.customersEntities.Find(id);
-            return EntityToModel(customers);
+            var customer = _context.customersEntities.Find(id);
+            return EntityToModel(customer);
         }
 
-        public void Update(CustomerModel customers)
+        public void Update(CustomerModel customer)
         {
-            var entity = _context.customersEntities.Find(customers.Id);
-            ModelToEntity(customers, entity);
+            var entity = _context.customersEntities.Find(customer.Id);
+            ModelToEntity(customer, entity);
             _context.customersEntities.Update(entity);
             _context.SaveChanges();
         }
 
         public void Delete(int? id)
         {
-            var customers = _context.customersEntities.Find(id);
-            _context.customersEntities.Remove(customers); 
+            var customer = _context.customersEntities.Find(id);
+            _context.customersEntities.Remove(customer); 
             _context.SaveChanges();
         }
 
