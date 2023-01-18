@@ -50,6 +50,13 @@ namespace POS.Web.Controllers
             return View(order);
         }
 
+        [HttpGet]
+        public IActionResult Edit(int? id)
+        {
+            var order = _service.View(id);
+            return View(order);
+        }
+
         [HttpPost]
         public IActionResult Update([Bind("Id, CustomerId, EmployeeId, OrderDate, RequiredDate, ShippedDate, ShipVia, Freight, ShipName, ShipAddress, ShipCity, ShipRegion, ShipPostalCode, ShipCountry")] OrderModel order)
         {
