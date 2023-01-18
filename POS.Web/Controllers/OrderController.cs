@@ -8,21 +8,24 @@ namespace POS.Web.Controllers
     public class OrderController : Controller
     {
         private readonly OrderService _service;
-        public OrderController(OrderService service)
+        public OrderController(ApplicationDbContext context)
         {
-            _service = service;
+            _service = new OrderService(context);
         }
 
+        [HttpGet]
         public IActionResult Add()
         {
             return View();
         }
 
+        [HttpGet]
         public IActionResult AddModal()
         {
             return PartialView("_Add");
         }
 
+        [HttpPost]
         public IActionResult Save([Bind("CustomersId, EmployeeId, OrderDate, RequiredDate, ShippedDate, ShipVia, Freight, ShipName, ShipAddress, ShipCity, ShipRegion, ShipPostalCode, ShipCountry")] OrderModel request)
         {
             if (ModelState.IsValid)
@@ -33,18 +36,21 @@ namespace POS.Web.Controllers
             return View("Add", request);
         }
 
+        [HttpGet]
         public IActionResult Index()
         {
             var product = _service.GetWithOrderDetails();
             return View();
         }
 
+        [HttpGet]
         public IActionResult Details(int? id)
         {
             var order = _service.ViewWithOrderDetails(id);
             return View(order);
         }
 
+        [HttpPost]
         public IActionResult Update([Bind("Id, CustomersId, EmployeeId, OrderDate, RequiredDate, ShippedDate, ShipVia, Freight, ShipName, ShipAddress, ShipCity, ShipRegion, ShipPostalCode, ShipCountry")] OrderModel order)
         {
             if (ModelState.IsValid)
@@ -55,6 +61,7 @@ namespace POS.Web.Controllers
             return View("Edit", order);
         }
 
+        [HttpGet]
         public IActionResult Delete(int? id)
         {
             _service.Delete(id);

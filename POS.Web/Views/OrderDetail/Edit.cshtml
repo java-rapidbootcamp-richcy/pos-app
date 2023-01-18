@@ -2,92 +2,51 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    @model POS.ViewModel.OrderModel
+    @model POS.ViewModel.OrderDetailModel
 
 }
 
 @{
-    ViewData["Title"] = "Edit Order";
+    ViewData["Title"] = "Edit Order Detail";
 }
 
-<h2>Edit Order</h2>
+<h2>Edit Order Details</h2>
 
-<form asp-controller="Order" asp-action="Update" method="post">
+<form asp-controller="OrderDetail" asp-action="Update" method="post">
     <div class="form-group">
-        <label asp-for="CustomerId">Customer</label>
-        <select asp-for="CustomerId" class="form-control">
-            <option>Pilih Customer</option>
-            <option value="1">Customer 1</option>
-            <option value="2">Customer 2</option>
+        <label asp-for="OrderId">Order</label>
+        <select asp-for="OrderId" class="form-control">
+            <option>Pilih Order</option>
+            <option value="1">Order 1</option>
+            <option value="2">Order 2</option>
         </select>
-        <span asp-validation-for="CustomerId" class="text-danger" />
+        <span asp-validation-for="OrderId" class="text-danger" />
     </div>
     <div class="form-group">
-        <label asp-for="EmployeeId">Employee</label>
-        <select asp-for="EmployeeId" class="form-control">
-            <option>Pilih Employee</option>
-            <option value="1">Employee 1</option>
-            <option value="2">Employee 2</option>
-            <option value="3">Employee 3</option>
+        <label asp-for="ProductId">Product</label>
+        <select asp-for="ProductId" class="form-control">
+            <option>Pilih Product</option>
+            <option value="1">Product 1</option>
+            <option value="2">Product 2</option>
+            <option value="3">Product 3</option>
         </select>
-        <span asp-validation-for="EmployeeId" class="text-danger" />
+        <span asp-validation-for="ProductId" class="text-danger" />
     </div>
     <div class="form-group">
-        <label asp-for="OrderDate">OrderDate</label>
-        <input asp-for="OrderDate" class="form-control" />
-        <span asp-validation-for="OrderDate" class="text-danger" />
+        <label asp-for="UnitPrice">Unit Price</label>
+        <input asp-for="UnitPrice" class="form-control" />
+        <span asp-validation-for="UnitPrice" class="text-danger" />
     </div>
     <div class="form-group">
-        <label asp-for="RequiredDate">RequiredDate</label>
-        <input asp-for="RequiredDate" class="form-control" />
-        <span asp-validation-for="RequiredDate" class="text-danger" />
+        <label asp-for="Quantity">Quantity</label>
+        <input asp-for="Quantity" class="form-control" />
+        <span asp-validation-for="Quantity" class="text-danger" />
     </div>
     <div class="form-group">
-        <label asp-for="ShippedDate">ShippedDate</label>
-        <input asp-for="ShippedDate" class="form-control" />
-        <span asp-validation-for="ShippedDate" class="text-danger" />
+        <label asp-for="Discount">Discount</label>
+        <input asp-for="Discount" class="form-control" />
+        <span asp-validation-for="Discount" class="text-danger" />
     </div>
-    <div class="form-group">
-        <label asp-for="ShipVia">ShipVia</label>
-        <input asp-for="ShipVia" class="form-control" />
-        <span asp-validation-for="ShipVia" class="text-danger" />
-    </div>
-    <div class="form-group">
-        <label asp-for="Freight">Freight</label>
-        <input asp-for="Freight" class="form-control" />
-        <span asp-validation-for="Freight" class="text-danger" />
-    </div>
-    <div class="form-group">
-        <label asp-for="ShipName">ShipName</label>
-        <input asp-for="ShipName" class="form-control" />
-        <span asp-validation-for="ShipName" class="text-danger" />
-    </div>
-    <div class="form-group">
-        <label asp-for="ShipAddress">ShipAddress</label>
-        <input asp-for="ShipAddress" class="form-control" />
-        <span asp-validation-for="ShipAddress" class="text-danger" />
-    </div>
-    <div class="form-group">
-        <label asp-for="ShipCity">ShipCity</label>
-        <input asp-for="ShipCity" class="form-control" />
-        <span asp-validation-for="ShipCity" class="text-danger" />
-    </div>
-    <div class="form-group">
-        <label asp-for="ShipRegion">ShipRegion</label>
-        <input asp-for="ShipRegion" class="form-control" />
-        <span asp-validation-for="ShipRegion" class="text-danger" />
-    </div>
-    <div class="form-group">
-        <label asp-for="ShipPostalCode">ShipPostalCode</label>
-        <input asp-for="ShipPostalCode" class="form-control" />
-        <span asp-validation-for="ShipPostalCode" class="text-danger" />
-    </div>
-    <div class="form-group">
-        <label asp-for="ShipCountry">ShipCountry</label>
-        <input asp-for="ShipCountry" class="form-control" />
-        <span asp-validation-for="ShipCountry" class="text-danger" />
-    </div>
-
     <div class="pt-2 pb-2">
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>
