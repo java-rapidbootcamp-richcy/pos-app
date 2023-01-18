@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace POS.Repository
 {
-    [Table("tbl_customers")]
-    public class CustomersEntity
+    [Table("tbl_customer")]
+    public class CustomerEntity
     {
         [Key]
         [Column("id")]
@@ -57,12 +57,12 @@ namespace POS.Repository
 
         public ICollection<OrderEntity> ordersEntities { get; set; }
 
-        public CustomersEntity()
+        public CustomerEntity()
         {
 
         }
 
-        public CustomersEntity(POS.ViewModel.CustomerModel model)
+        public CustomerEntity(POS.ViewModel.CustomerModel model)
         {
             CompanyName= model.CompanyName;
             ContactName= model.ContactName;

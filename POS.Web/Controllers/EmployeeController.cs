@@ -40,7 +40,7 @@ namespace POS.Web.Controllers
                 _service.Add(new EmployeeEntity(request));
                 return Redirect("Index");
             }
-            return View("_Add", request);
+            return View("Add", request);
         }
         [HttpGet]
         public IActionResult Details(int? id)

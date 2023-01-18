@@ -12,7 +12,7 @@ namespace POS.Service
     {
         private readonly ApplicationDbContext _context;
 
-        public CustomerModel EntityToModel(CustomersEntity customersEntity)
+        public CustomerModel EntityToModel(CustomerEntity customersEntity)
         {
             CustomerModel result = new CustomerModel();
             result.Id = customersEntity.Id;
@@ -29,7 +29,7 @@ namespace POS.Service
             return result;
         }
 
-        public void ModelToEntity(CustomerModel model, CustomersEntity entity)
+        public void ModelToEntity(CustomerModel model, CustomerEntity entity)
         {
             entity.CompanyName = model.CompanyName;
             entity.ContactName = model.ContactName;
@@ -48,12 +48,12 @@ namespace POS.Service
             _context = context;
         }
 
-        public List<CustomersEntity> Get()
+        public List<CustomerEntity> Get()
         {
             return _context.customersEntities.ToList();
         }
 
-        public void Add(CustomersEntity customers)
+        public void Add(CustomerEntity customers)
         {
             _context.customersEntities.Add(customers);
             _context.SaveChanges();

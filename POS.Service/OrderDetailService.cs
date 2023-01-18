@@ -11,7 +11,7 @@ namespace POS.Service
     public class OrderDetailService
     {
         private readonly ApplicationDbContext _context;
-        private OrderDetailModel EntityToModel(OrderDetailsEntity entity)
+        private OrderDetailModel EntityToModel(OrderDetailEntity entity)
         {
             OrderDetailModel result = new OrderDetailModel();
             result.Id = entity.Id;
@@ -24,7 +24,7 @@ namespace POS.Service
 
         }
 
-        private void ModelToEntity (OrderDetailModel model, OrderDetailsEntity entity)
+        private void ModelToEntity (OrderDetailModel model, OrderDetailEntity entity)
         {
             entity.OrderId = model.OrderId;
             entity.ProductId = model.ProductId;
@@ -38,12 +38,12 @@ namespace POS.Service
             _context = context;
         }
 
-        public List<OrderDetailsEntity> Get()
+        public List<OrderDetailEntity> Get()
         {
             return _context.orderDetailsEntities.ToList();
         }
 
-        public void Add(OrderDetailsEntity orderDetails)
+        public void Add(OrderDetailEntity orderDetails)
         {
             _context.orderDetailsEntities.Add(orderDetails);
             _context.SaveChanges();

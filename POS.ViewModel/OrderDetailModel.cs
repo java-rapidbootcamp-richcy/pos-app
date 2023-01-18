@@ -9,7 +9,6 @@ namespace POS.ViewModel
 {
     public class OrderDetailModel
     {
-        [Required]
         public int Id { get; set; }
 
         [Required]

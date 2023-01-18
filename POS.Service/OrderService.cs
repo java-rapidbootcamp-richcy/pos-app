@@ -17,7 +17,7 @@ namespace POS.Service
             OrderModel result = new OrderModel();
             result.Id = entity.Id;
             result.CustomerId = entity.CustomerId;
-            result.CustomerId = entity.EmployeeId;
+            result.EmployeeId = entity.EmployeeId;
             result.OrderDate = entity.OrderDate;
             result.RequiredDate = entity.RequiredDate;
             result.ShippedDate = entity.ShippedDate;
@@ -34,8 +34,8 @@ namespace POS.Service
 
         private void ModelToEntity(OrderModel model, OrderEntity entity)
         {
-            entity.Id = model.Id;
             entity.CustomerId = model.CustomerId;
+            entity.EmployeeId = model.EmployeeId;
             entity.OrderDate = model.OrderDate;
             entity.RequiredDate = model.RequiredDate;
             entity.ShippedDate = model.ShippedDate;

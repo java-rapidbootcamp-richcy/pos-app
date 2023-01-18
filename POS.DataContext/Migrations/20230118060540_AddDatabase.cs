@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace POS.Repository.Migrations
 {
-    public partial class TestMigration : Migration
+    public partial class AddDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -31,7 +31,7 @@ namespace POS.Repository.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "tbl_customers",
+                name: "tbl_customer",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
@@ -58,12 +58,12 @@ namespace POS.Repository.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_tbl_customers", x => x.id);
+                    table.PrimaryKey("PK_tbl_customer", x => x.id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "tbl_employees",
+                name: "tbl_employee",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
@@ -99,7 +99,7 @@ namespace POS.Repository.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_tbl_employees", x => x.id);
+                    table.PrimaryKey("PK_tbl_employee", x => x.id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -143,8 +143,8 @@ namespace POS.Repository.Migrations
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    CustomersId = table.Column<int>(type: "int", nullable: false),
-                    EmployeesId = table.Column<int>(type: "int", nullable: false),
+                    customer_id = table.Column<int>(type: "int", nullable: false),
+                    employee_id = table.Column<int>(type: "int", nullable: false),
                     order_date = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     required_date = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     shipped_date = table.Column<DateTime>(type: "datetime(6)", nullable: false),
@@ -167,15 +167,15 @@ namespace POS.Repository.Migrations
                 {
                     table.PrimaryKey("PK_tbl_order", x => x.id);
                     table.ForeignKey(
-                        name: "FK_tbl_order_tbl_customers_CustomersId",
-                        column: x => x.CustomersId,
-                        principalTable: "tbl_customers",
+                        name: "FK_tbl_order_tbl_customer_customer_id",
+                        column: x => x.customer_id,
+                        principalTable: "tbl_customer",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_tbl_order_tbl_employees_EmployeesId",
-                        column: x => x.EmployeesId,
-                        principalTable: "tbl_employees",
+                        name: "FK_tbl_order_tbl_employee_employee_id",
+                        column: x => x.employee_id,
+                        principalTable: "tbl_employee",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                 })
@@ -218,29 +218,29 @@ namespace POS.Repository.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "tbl_order_details",
+                name: "tbl_order_detail",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    OrdersId = table.Column<int>(type: "int", nullable: false),
-                    ProductId = table.Column<int>(type: "int", nullable: false),
-                    unit_price = table.Column<int>(type: "int", nullable: false),
+                    order_id = table.Column<int>(type: "int", nullable: false),
+                    product_id = table.Column<int>(type: "int", nullable: false),
+                    unit_price = table.Column<double>(type: "double", nullable: false),
                     quantity = table.Column<long>(type: "bigint", nullable: false),
                     discount = table.Column<double>(type: "double", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_tbl_order_details", x => x.id);
+                    table.PrimaryKey("PK_tbl_order_detail", x => x.id);
                     table.ForeignKey(
-                        name: "FK_tbl_order_details_tbl_order_OrdersId",
-                        column: x => x.OrdersId,
+                        name: "FK_tbl_order_detail_tbl_order_order_id",
+                        column: x => x.order_id,
                         principalTable: "tbl_order",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_tbl_order_details_tbl_product_ProductId",
-                        column: x => x.ProductId,
+                        name: "FK_tbl_order_detail_tbl_product_product_id",
+                        column: x => x.product_id,
                         principalTable: "tbl_product",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
@@ -248,24 +248,24 @@ namespace POS.Repository.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
-                name: "IX_tbl_order_CustomersId",
+                name: "IX_tbl_order_customer_id",
                 table: "tbl_order",
-                column: "CustomersId");
+                column: "customer_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_tbl_order_EmployeesId",
+                name: "IX_tbl_order_employee_id",
                 table: "tbl_order",
-                column: "EmployeesId");
+                column: "employee_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_tbl_order_details_OrdersId",
-                table: "tbl_order_details",
-                column: "OrdersId");
+                name: "IX_tbl_order_detail_order_id",
+                table: "tbl_order_detail",
+                column: "order_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_tbl_order_details_ProductId",
-                table: "tbl_order_details",
-                column: "ProductId");
+                name: "IX_tbl_order_detail_product_id",
+                table: "tbl_order_detail",
+                column: "product_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_tbl_product_category_id",
@@ -281,7 +281,7 @@ namespace POS.Repository.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "tbl_order_details");
+                name: "tbl_order_detail");
 
             migrationBuilder.DropTable(
                 name: "tbl_order");
@@ -290,10 +290,10 @@ namespace POS.Repository.Migrations
                 name: "tbl_product");
 
             migrationBuilder.DropTable(
-                name: "tbl_customers");
+                name: "tbl_customer");
 
             migrationBuilder.DropTable(
-                name: "tbl_employees");
+                name: "tbl_employee");
 
             migrationBuilder.DropTable(
                 name: "tbl_category");

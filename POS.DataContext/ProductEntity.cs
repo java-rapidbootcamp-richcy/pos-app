@@ -54,7 +54,7 @@ namespace POS.Repository
         [Column("discontinued")]
         public string Discontinued { get; set; }
 
-        public ICollection<OrderDetailsEntity> orderDetailsEntities { get; set; }
+        public ICollection<OrderDetailEntity> orderDetailsEntities { get; set; }
 
         public ProductEntity(POS.ViewModel.ProductModel model)
         {

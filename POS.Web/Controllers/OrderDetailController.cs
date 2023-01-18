@@ -16,7 +16,8 @@ namespace POS.Web.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            var orderDetail = _service.Get();
+            return View(orderDetail);
         }
 
         [HttpGet]
@@ -36,7 +37,7 @@ namespace POS.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                _service.Add(new OrderDetailsEntity(request));
+                _service.Add(new OrderDetailEntity(request));
                 return Redirect("Index");
             }
             return View("Add", request);

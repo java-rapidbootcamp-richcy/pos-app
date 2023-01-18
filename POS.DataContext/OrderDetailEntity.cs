@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace POS.Repository
 {
-    [Table("tbl_order_details")]
-    public class OrderDetailsEntity
+    [Table("tbl_order_detail")]
+    public class OrderDetailEntity
     {
         [Key]
         [Column("id")]
@@ -39,12 +39,12 @@ namespace POS.Repository
         [Column("discount")]
         public Double Discount { get; set; }
 
-        public OrderDetailsEntity()
+        public OrderDetailEntity()
         {
 
         }
 
-        public OrderDetailsEntity(POS.ViewModel.OrderDetailModel model)
+        public OrderDetailEntity(POS.ViewModel.OrderDetailModel model)
         {
             OrderId = model.OrderId;
             ProductId = model.ProductId;

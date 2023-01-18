@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace POS.Repository
 {
-    [Table("tbl_employees")]
+    [Table("tbl_employee")]
     public class EmployeeEntity
     {
         [Key]

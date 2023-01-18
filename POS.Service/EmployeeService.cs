@@ -6,7 +6,6 @@ namespace POS.Service
     public class EmployeeService
     {
         private readonly ApplicationDbContext _context;
-
         public EmployeeModel EntityToModel(EmployeeEntity employeeEntity)
         {
             EmployeeModel result = new EmployeeModel();
@@ -31,7 +30,6 @@ namespace POS.Service
         }
         public void ModelToEntity(EmployeeModel model, EmployeeEntity entity)
         {
-            entity.Id = model.Id;
             entity.LastName = model.LastName;
             entity.FirstName = model.FirstName;
             entity.Title = model.Title;

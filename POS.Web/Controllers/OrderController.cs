@@ -26,7 +26,7 @@ namespace POS.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult Save([Bind("CustomersId, EmployeeId, OrderDate, RequiredDate, ShippedDate, ShipVia, Freight, ShipName, ShipAddress, ShipCity, ShipRegion, ShipPostalCode, ShipCountry")] OrderModel request)
+        public IActionResult Save([Bind("CustomerId, EmployeeId, OrderDate, RequiredDate, ShippedDate, ShipVia, Freight, ShipName, ShipAddress, ShipCity, ShipRegion, ShipPostalCode, ShipCountry")] OrderModel request)
         {
             if (ModelState.IsValid)
             {
@@ -39,8 +39,8 @@ namespace POS.Web.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var product = _service.GetWithOrderDetails();
-            return View();
+            var order = _service.GetWithOrderDetails();
+            return View(order);
         }
 
         [HttpGet]
@@ -51,7 +51,7 @@ namespace POS.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult Update([Bind("Id, CustomersId, EmployeeId, OrderDate, RequiredDate, ShippedDate, ShipVia, Freight, ShipName, ShipAddress, ShipCity, ShipRegion, ShipPostalCode, ShipCountry")] OrderModel order)
+        public IActionResult Update([Bind("Id, CustomerId, EmployeeId, OrderDate, RequiredDate, ShippedDate, ShipVia, Freight, ShipName, ShipAddress, ShipCity, ShipRegion, ShipPostalCode, ShipCountry")] OrderModel order)
         {
             if (ModelState.IsValid)
             {
