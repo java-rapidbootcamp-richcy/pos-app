@@ -9,19 +9,19 @@ using System.Threading.Tasks;
 namespace POS.Repository
 {
     [Table("tbl_order")]
-    public class OrdersEntity
+    public class OrderEntity
     {
         [Key]
         [Column("id")]
         public int Id { get; set; }
 
-       /* [Column("customer_id")]
-        public int CustomerId { get; set; }*/
+        [Column("customer_id")]
+        public int CustomerId { get; set; }
 
         public CustomersEntity Customers { get; set; }
-/*
+
         [Column("employee_id")]
-        public int EmployeeId { get; set; }*/
+        public int EmployeeId { get; set; }
 
         public EmployeeEntity Employees { get; set; }
 
@@ -59,6 +59,28 @@ namespace POS.Repository
         public string ShipCountry { get; set; }
 
         public ICollection<OrderDetailsEntity> orderDetailsEntities { get; set; }
+
+        public OrderEntity()
+        {
+
+        }
+
+        public OrderEntity(POS.ViewModel.OrderModel model)
+        {
+            CustomerId = model.CustomerId;
+            EmployeeId = model.EmployeeId;
+            OrderDate = model.OrderDate;
+            RequiredDate = model.RequiredDate;
+            ShippedDate = model.ShippedDate;
+            ShipVia = model.ShipVia;
+            Freight = model.Freight;
+            ShipName = model.ShipName;
+            ShipAddress = model.ShipAddress;
+            ShipCity = model.ShipCity;
+            ShipRegion = model.ShipRegion;
+            ShipPostalCode = model.ShipPostalCode;
+            ShipCountry = model.ShipCountry;
+        }
 
     }
 }

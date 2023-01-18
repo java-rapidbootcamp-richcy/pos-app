@@ -79,7 +79,7 @@ namespace POS.Repository
         [Column("photo_path")]
         public string PhotoPath { get; set; }
 
-        public ICollection<OrdersEntity> ordersEntities { get; set; }
+        public ICollection<OrderEntity> ordersEntities { get; set; }
 
         public EmployeeEntity()
         {

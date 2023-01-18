@@ -16,7 +16,7 @@ namespace POS.Repository
         public int Id { get; set; }
 
         [Column("order_id")]
-        public OrdersEntity Orders { get; set; }
+        public OrderEntity Orders { get; set; }
 
         [Column("product_id")]
         public ProductEntity Product { get; set; }
