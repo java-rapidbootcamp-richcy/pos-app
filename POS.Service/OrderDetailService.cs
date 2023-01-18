@@ -43,9 +43,9 @@ namespace POS.Service
             return _context.orderDetailsEntities.ToList();
         }
 
-        public void Add(OrderDetailEntity orderDetails)
+        public void Add(OrderDetailEntity orderDetail)
         {
-            _context.orderDetailsEntities.Add(orderDetails);
+            _context.orderDetailsEntities.Add(orderDetail);
             _context.SaveChanges();
         }
 

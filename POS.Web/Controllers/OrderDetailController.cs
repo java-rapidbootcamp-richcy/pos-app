@@ -54,7 +54,7 @@ namespace POS.Web.Controllers
         public IActionResult Edit(int? id)
         {
             var orderDetail = _service.View(id);
-            return View();
+            return View(orderDetail);
         }
 
         [HttpPost]

@@ -14,6 +14,13 @@ namespace POS.Web.Controllers
         }
 
         [HttpGet]
+        public IActionResult Index()
+        {
+            var order = _service.GetWithOrderDetails();
+            return View(order);
+        }
+
+        [HttpGet]
         public IActionResult Add()
         {
             return View();
@@ -34,13 +41,6 @@ namespace POS.Web.Controllers
                 return Redirect("Index");
             }
             return View("Add", request);
-        }
-
-        [HttpGet]
-        public IActionResult Index()
-        {
-            var order = _service.GetWithOrderDetails();
-            return View(order);
         }
 
         [HttpGet]

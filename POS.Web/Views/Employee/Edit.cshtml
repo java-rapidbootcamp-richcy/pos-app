@@ -5,6 +5,7 @@
 
 <form asp-controller="Employee" asp-action="Update" method="post">
     <div class="form-group">
+        <input type="hidden" asp-for="Id" />
         <label asp-for="LastName">LastName</label>
         <input asp-for="LastName" class="form-control" />
         <span asp-validation-for="LastName" class="text-danger" />

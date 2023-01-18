@@ -14,6 +14,7 @@
 
 <form asp-controller="Order" asp-action="Update" method="post">
     <div class="form-group">
+        <input type="hidden" asp-for="Id" />
         <label asp-for="CustomerId">Customer</label>
         <select asp-for="CustomerId" class="form-control">
             <option>Pilih Customer</option>

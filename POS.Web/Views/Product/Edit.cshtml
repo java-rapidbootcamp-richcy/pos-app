@@ -7,6 +7,7 @@
 <h2>Edit Product</h2>
 <form asp-controller="Product" asp-action="Update" method="post">
     <div class="form-group">
+        <input type="hidden" asp-for="Id" />
         <label asp-for="ProductName">Product Name</label>
         <input asp-for="ProductName" class="form-control" />
         <span asp-validation-for="ProductName" class="text-danger" />
