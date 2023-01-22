@@ -5,19 +5,20 @@ using POS.ViewModel;
 
 namespace POS.Web.Controllers
 {
-    public class OrderDetailController : Controller
+    public class ShipperController : Controller
     {
-        private readonly OrderDetailService _service;
-        public OrderDetailController(ApplicationDbContext context)
+        private readonly ShipperService _service;
+
+        public ShipperController(ApplicationDbContext context)
         {
-            _service = new OrderDetailService(context);
+            _service = new ShipperService(context);
         }
 
         [HttpGet]
         public IActionResult Index()
         {
-            var orderDetail = _service.Get();
-            return View(orderDetail);
+            var categories = _service.Get();
+            return View(categories);
         }
 
         [HttpGet]
@@ -33,46 +34,49 @@ namespace POS.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult Save([Bind("OrderId, ProductId, UnitPrice, Quantity, Discount")]OrderDetailModel request)
+        [ValidateAntiForgeryToken]
+        public IActionResult Save([Bind("CompanyName, Phone")] ShipperModel request)
         {
             if (ModelState.IsValid)
             {
-                _service.Add(new OrderDetailEntity(request));
+                _service.Add(new ShipperEntity(request));
                 return Redirect("Index");
             }
+
             return View("Add", request);
         }
 
         [HttpGet]
         public IActionResult Details(int? id)
         {
-            var orderDetail = _service.View(id);
-            return View(orderDetail);
+            var shipper = _service.View(id);
+            return View(shipper);
         }
 
         [HttpGet]
         public IActionResult Edit(int? id)
         {
-            var orderDetail = _service.View(id);
-            return View(orderDetail);
+            var shipper = _service.View(id);
+            return View(shipper);
         }
 
         [HttpPost]
-        public IActionResult Update([Bind("Id, OrderId, ProductId, UnitPrice, Quantity, Discount")]OrderDetailModel orderDetail)
+        [ValidateAntiForgeryToken]
+        public IActionResult Update([Bind("Id, CompanyName, Phone")] ShipperModel request)
         {
             if (ModelState.IsValid)
             {
-                _service.Update(orderDetail);
+                _service.Update(request);
                 return Redirect("Index");
             }
-            return View("Edit", orderDetail);
+            return View("Edit", request);
         }
 
         [HttpGet]
         public IActionResult Delete(int? id)
         {
             _service.Delete(id);
-            return Redirect("/OrderDetail");
+            return Redirect("/Shipper");
         }
     }
 }

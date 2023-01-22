@@ -1,0 +1,24 @@
+﻿@model POS.ViewModel.ShipperModel
+
+@{
+    ViewData["Title"] = "Shipper Detail";
+}
+
+<h2>Shipper Detail</h2>
+<table class="table tab-content">
+    <tbody>
+        <tr>
+            <th>ID</th>
+            <td>@Model.Id</td>
+        </tr>
+        <tr>
+            <th>Company Name</th>
+            <td>@Model.CompanyName</td>
+        </tr>
+        <tr>
+            <th>Phone</th>
+            <td>@Model.Phone</td>
+        </tr>
+    </tbody>
+</table>
+<a asp-action="Index" class="btn btn-sm btn-danger">Back</a>

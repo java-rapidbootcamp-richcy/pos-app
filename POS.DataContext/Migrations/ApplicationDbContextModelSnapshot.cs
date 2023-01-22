@@ -162,8 +162,9 @@ namespace POS.Repository.Migrations
                         .HasColumnType("longtext")
                         .HasColumnName("photo_path");
 
-                    b.Property<int>("PostalCode")
-                        .HasColumnType("int")
+                    b.Property<string>("PostalCode")
+                        .IsRequired()
+                        .HasColumnType("longtext")
                         .HasColumnName("postal_code");
 
                     b.Property<string>("Region")
@@ -209,8 +210,8 @@ namespace POS.Repository.Migrations
                         .HasColumnType("int")
                         .HasColumnName("product_id");
 
-                    b.Property<long>("Quantity")
-                        .HasColumnType("bigint")
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int")
                         .HasColumnName("quantity");
 
                     b.Property<double>("UnitPrice")
@@ -291,11 +292,17 @@ namespace POS.Repository.Migrations
                         .HasColumnType("datetime(6)")
                         .HasColumnName("shipped_date");
 
+                    b.Property<int>("ShipperId")
+                        .HasColumnType("int")
+                        .HasColumnName("shipper_id");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CustomerId");
 
                     b.HasIndex("EmployeeId");
+
+                    b.HasIndex("ShipperId");
 
                     b.ToTable("tbl_order");
                 });
@@ -311,9 +318,8 @@ namespace POS.Repository.Migrations
                         .HasColumnType("int")
                         .HasColumnName("category_id");
 
-                    b.Property<string>("Discontinued")
-                        .IsRequired()
-                        .HasColumnType("longtext")
+                    b.Property<bool>("Discontinued")
+                        .HasColumnType("tinyint(1)")
                         .HasColumnName("discontinued");
 
                     b.Property<string>("ProductName")
@@ -321,8 +327,8 @@ namespace POS.Repository.Migrations
                         .HasColumnType("longtext")
                         .HasColumnName("product_name");
 
-                    b.Property<long>("QuantityPerUnit")
-                        .HasColumnType("bigint")
+                    b.Property<int>("QuantityPerUnit")
+                        .HasColumnType("int")
                         .HasColumnName("quantity_per_unit");
 
                     b.Property<long>("ReorderLevel")
@@ -352,6 +358,28 @@ namespace POS.Repository.Migrations
                     b.HasIndex("SupplierId");
 
                     b.ToTable("tbl_product");
+                });
+
+            modelBuilder.Entity("POS.Repository.ShipperEntity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    b.Property<string>("CompanyName")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("company_name");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("phone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("tbl_shipper");
                 });
 
             modelBuilder.Entity("POS.Repository.SupplierEntity", b =>
@@ -406,8 +434,9 @@ namespace POS.Repository.Migrations
                         .HasColumnType("longtext")
                         .HasColumnName("phone");
 
-                    b.Property<int>("PostalCode")
-                        .HasColumnType("int")
+                    b.Property<string>("PostalCode")
+                        .IsRequired()
+                        .HasColumnType("longtext")
                         .HasColumnName("postal_code");
 
                     b.Property<string>("Region")
@@ -453,9 +482,17 @@ namespace POS.Repository.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("POS.Repository.ShipperEntity", "Shipper")
+                        .WithMany("Orders")
+                        .HasForeignKey("ShipperId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Customer");
 
                     b.Navigation("Employee");
+
+                    b.Navigation("Shipper");
                 });
 
             modelBuilder.Entity("POS.Repository.ProductEntity", b =>
@@ -500,6 +537,11 @@ namespace POS.Repository.Migrations
             modelBuilder.Entity("POS.Repository.ProductEntity", b =>
                 {
                     b.Navigation("orderDetailsEntities");
+                });
+
+            modelBuilder.Entity("POS.Repository.ShipperEntity", b =>
+                {
+                    b.Navigation("Orders");
                 });
 
             modelBuilder.Entity("POS.Repository.SupplierEntity", b =>

@@ -19,6 +19,7 @@
             <th>Order Date</th>
             <th>Required Date</th>
             <th>Shipped Date</th>
+            <th>ShipperId</th>
             <th>Ship Via</th>
             <th>Freight</th>
             <th>Ship Name</th>
@@ -27,7 +28,6 @@
             <th>Ship Region</th>
             <th>Ship PostalCode</th>
             <th>Ship Country</th>
-            <th>Order Details</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -41,6 +41,7 @@
                 <td>@item.OrderDate</td>
                 <td>@item.RequiredDate</td>
                 <td>@item.ShippedDate</td>
+                <td>@item.ShipperId</td>
                 <td>@item.ShipVia</td>
                 <td>@item.Freight</td>
                 <td>@item.ShipName</td>
@@ -50,52 +51,11 @@
                 <td>@item.ShipPostalCode</td>
                 <td>@item.ShipCountry</td>
                 <td>
-                    @foreach (var data in item.orderDetailsEntities)
-                    {
-                        <h6>Unit Price : @data.UnitPrice</h6>
-                        <h6>Quantity : @data.Quantity</h6>
-                        <h6>Discount : @data.Discount</h6>
-                    }
-                </td>
-                <td>
                     <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
-                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-success">View</a>
+                    <a asp-action="Detail" asp-route-id="@item.Id" class="btn btn-sm btn-success">View</a>
                     <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
-
-<div id="my-modal" class="modal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Modal body text goes here.</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-@section Scripts
-    {
-    <script type="text/javascript">
-        $("#btn-add").on("click", function (e) {
-            e.preventDefault();
-            $.ajax({
-                url: "/Order/AddModal",
-                type: "GET",
-                dataType: "html",
-                success: function (data) {
-                    $("#my-modal").find(".modal-body").html(data);
-                    $("#my-modal").modal("show");
-                }
-            });
-
-        });
-    </script>
-}

@@ -66,8 +66,8 @@ namespace POS.Service
 
         public EmployeeModel View(int? id)
         {
-            var employees = _context.employeesEntities.Find(id);
-            return EntityToModel(employees);
+            var employee = _context.employeesEntities.Find(id);
+            return EntityToModel(employee);
         }
 
         public void Update(EmployeeModel employee)

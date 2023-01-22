@@ -16,7 +16,7 @@ namespace POS.ViewModel
         public int CategoryId { get; set; }
 
         [Required]
-        public long QuantityPerUnit { get; set; }
+        public int QuantityPerUnit { get; set; }
 
         [Required]
         public double UnitPrice { get; set; }
@@ -31,6 +31,6 @@ namespace POS.ViewModel
         public long ReorderLevel { get; set; }
 
         [Required]
-        public string Discontinued { get; set; }
+        public bool Discontinued { get; set; }
     }
 }

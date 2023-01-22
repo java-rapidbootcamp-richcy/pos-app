@@ -18,20 +18,16 @@ namespace POS.Repository
         [Column("customer_id")]
         public int CustomerId { get; set; }
 
-        [Required]
         public CustomerEntity Customer { get; set; }
 
         [Column("employee_id")]
         public int EmployeeId { get; set; }
 
-        [Required]
         public EmployeeEntity Employee { get; set; }
 
-        [Required]
         [Column("order_date")]
         public DateTime OrderDate { get; set; }
 
-        [Required]
         [Column("required_date")]
         public DateTime RequiredDate { get; set; }
 
@@ -39,35 +35,32 @@ namespace POS.Repository
         [Column("shipped_date")]
         public DateTime ShippedDate { get; set; }
 
-        [Required]
+        [Column("shipper_id")]
+        public int ShipperId { get; set; }
+
+        public ShipperEntity Shipper { get; set; }
+
         [Column("ship_via")]
         public int ShipVia { get; set; }
 
-        [Required]
         [Column("freight")]
         public int Freight { get; set; }
 
-        [Required]
         [Column("ship_name")]
         public string ShipName { get; set; }
 
-        [Required]
         [Column("ship_address")]
         public string ShipAddress { get; set; }
 
-        [Required]
         [Column("ship_city")]
         public string ShipCity { get; set; }
 
-        [Required]
         [Column("ship_region")]
         public string ShipRegion { get; set; }
 
-        [Required]
         [Column("ship_postal_code")]
         public string ShipPostalCode { get; set; }
 
-        [Required]
         [Column("ship_country")]
         public string ShipCountry { get; set; }
 
@@ -78,7 +71,7 @@ namespace POS.Repository
 
         }
 
-        public OrderEntity(POS.ViewModel.OrderModel model)
+        /*public OrderEntity(POS.ViewModel.OrderModel model)
         {
             CustomerId = model.CustomerId;
             EmployeeId = model.EmployeeId;
@@ -93,7 +86,7 @@ namespace POS.Repository
             ShipRegion = model.ShipRegion;
             ShipPostalCode = model.ShipPostalCode;
             ShipCountry = model.ShipCountry;
-        }
+        }*/
 
     }
 }

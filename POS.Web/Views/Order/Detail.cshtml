@@ -1,0 +1,133 @@
+﻿@model POS.ViewModel.OrderWithDetailRes
+@{
+}
+
+
+<!-- Main content -->
+<div class="invoice p-3 mb-3">
+    <!-- title row -->
+    <div class="row">
+        <div class="col-12">
+            <h4>
+                <i class="fas fa-globe"></i> AdminLTE, Inc.
+                <small class="float-right">Date: @Model.OrderDate</small>
+            </h4>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- info row -->
+    <div class="row invoice-info">
+        <div class="col-sm-3 invoice-col">
+            From
+            <address>
+                <strong>Rapid Official Store</strong><br>
+                Phone: 17171717 <br>
+                Tangerang, Indonesia <br>
+            </address>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-3 invoice-col">
+            To
+            <address>
+                <strong>@Model.ShipName</strong><br>
+                @Model.ShipAddress, @Model.ShipCity<br>
+                @Model.ShipRegion, @Model.ShipCountry, @Model.ShipPostalCode<br>
+            </address>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-3 invoice-col">
+            Send by
+            <address>
+                <strong>@Model.ShipperName</strong><br>
+                Phone: @Model.ShipperPhone
+            </address>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-3 invoice-col">
+            <b>Invoice # @Model.Id</b><br>
+            <br>
+            <b>Order ID:</b> @Model.Id<br>
+            <b>Payment Due:</b> @Model.RequiredDate<br>
+            <b>Account:</b> @Model.CustomerId;
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+    <!-- Table row -->
+    <div class="row">
+        <div class="col-12 table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Quantity</th>
+                        <th>Product</th>
+                        <th>Product ID #</th>
+                        <th>Discount (%)</th>
+                        <th>Price per Item (Rp)</th>
+                    <th>Subtotal (Rp)</th>
+                </tr>
+            </thead>
+            <tbody>
+                    @foreach (var item in Model.orderDetails)
+                    {
+                        <tr>
+                            <td>@item.Quantity</td>
+                                <td>@item.ProductName</td>
+                                <td>@item.ProductId</td>
+                                <td>@item.Discount</td>
+                                <td>@item.UnitPrice</td>
+                                <td>@item.Subtotal</td>
+                            </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+        <!-- /.col -->
+        <div class="col-6">
+            <p class="lead">Amount Due @Model.RequiredDate</p>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <tr>
+                        <th style="width:50%">Subtotal:</th>
+                        <td>Rp @Model.Subtotal</td>
+                    </tr>
+                    <tr>
+                        <th>Tax (10%)</th>
+                        <td>Rp @Model.Tax</td>
+                    </tr>
+                    <tr>
+                        <th>Shipping:</th>
+                        <td>Rp @Model.Shipping</td>
+                    </tr>
+                    <tr>
+                        <th>Total:</th>
+                        <td>Rp @Model.Total</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+    <!-- this row will not appear when printing -->
+    <div class="row no-print">
+        <div class="col-12">
+            @*<a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>*@
+            <button type="button" class="btn btn-success float-right">
+                <i class="far fa-credit-card"></i> Submit
+                Payment
+            </button>
+            <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
+                <i class="fas fa-download"></i> Generate PDF
+            </button>
+        </div>
+    </div>
+</div>
+<!-- /.invoice -->

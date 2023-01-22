@@ -84,7 +84,8 @@ namespace POS.Repository.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     region = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    postal_code = table.Column<int>(type: "int", nullable: false),
+                    postal_code = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     country = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     home_phone = table.Column<string>(type: "longtext", nullable: false)
@@ -100,6 +101,23 @@ namespace POS.Repository.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_tbl_employee", x => x.id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "tbl_shipper",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    company_name = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    phone = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_tbl_shipper", x => x.id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -121,7 +139,8 @@ namespace POS.Repository.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     region = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    postal_code = table.Column<int>(type: "int", nullable: false),
+                    postal_code = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     country = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     phone = table.Column<string>(type: "longtext", nullable: false)
@@ -148,6 +167,7 @@ namespace POS.Repository.Migrations
                     order_date = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     required_date = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     shipped_date = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    shipper_id = table.Column<int>(type: "int", nullable: false),
                     ship_via = table.Column<int>(type: "int", nullable: false),
                     freight = table.Column<int>(type: "int", nullable: false),
                     ship_name = table.Column<string>(type: "longtext", nullable: false)
@@ -178,6 +198,12 @@ namespace POS.Repository.Migrations
                         principalTable: "tbl_employee",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_tbl_order_tbl_shipper_shipper_id",
+                        column: x => x.shipper_id,
+                        principalTable: "tbl_shipper",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -191,13 +217,12 @@ namespace POS.Repository.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     supplier_id = table.Column<int>(type: "int", nullable: false),
                     category_id = table.Column<int>(type: "int", nullable: false),
-                    quantity_per_unit = table.Column<long>(type: "bigint", nullable: false),
+                    quantity_per_unit = table.Column<int>(type: "int", nullable: false),
                     unit_price = table.Column<double>(type: "double", nullable: false),
                     unit_in_stock = table.Column<long>(type: "bigint", nullable: false),
                     unit_on_order = table.Column<long>(type: "bigint", nullable: false),
                     reorder_level = table.Column<long>(type: "bigint", nullable: false),
-                    discontinued = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                    discontinued = table.Column<bool>(type: "tinyint(1)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -226,7 +251,7 @@ namespace POS.Repository.Migrations
                     order_id = table.Column<int>(type: "int", nullable: false),
                     product_id = table.Column<int>(type: "int", nullable: false),
                     unit_price = table.Column<double>(type: "double", nullable: false),
-                    quantity = table.Column<long>(type: "bigint", nullable: false),
+                    quantity = table.Column<int>(type: "int", nullable: false),
                     discount = table.Column<double>(type: "double", nullable: false)
                 },
                 constraints: table =>
@@ -256,6 +281,11 @@ namespace POS.Repository.Migrations
                 name: "IX_tbl_order_employee_id",
                 table: "tbl_order",
                 column: "employee_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_tbl_order_shipper_id",
+                table: "tbl_order",
+                column: "shipper_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_tbl_order_detail_order_id",
@@ -294,6 +324,9 @@ namespace POS.Repository.Migrations
 
             migrationBuilder.DropTable(
                 name: "tbl_employee");
+
+            migrationBuilder.DropTable(
+                name: "tbl_shipper");
 
             migrationBuilder.DropTable(
                 name: "tbl_category");

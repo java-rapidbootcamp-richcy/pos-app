@@ -6,94 +6,155 @@
 }
 
 @{
-    ViewData["Title"] = "New Order";
+    ViewBag.Title = "Order";
+    Layout = "_Layout";
 }
 
-<h2>Add Order</h2>
+<h2>Form Add Order</h2>
 
 <form asp-controller="Order" asp-action="Save" method="post">
     <div class="form-group">
         <label asp-for="CustomerId">Customer</label>
-        <select asp-for="CustomerId" class="form-control">
-            <option>Pilih Customer</option>
-            <option value="1">Customer 1</option>
-            <option value="2">Customer 2</option>
+        <select type="text" asp-for="CustomerId" class="form-control" asp-items="@ViewBag.Customer">
+            <option selected>Select Customer</option>
         </select>
-        <span asp-validation-for="CustomerId" class="text-danger" />
+        <span asp-validation-for="CustomerId" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="EmployeeId">Employee</label>
-        <select asp-for="EmployeeId" class="form-control">
-            <option>Pilih Employee</option>
-            <option value="1">Employee 1</option>
-            <option value="2">Employee 2</option>
-            <option value="3">Employee 3</option>
+        <select type="text" asp-for="EmployeeId" class="form-control" asp-items="@ViewBag.Employee">
+            <option selected>Select Employee</option>
         </select>
-        <span asp-validation-for="EmployeeId" class="text-danger" />
+        <span asp-validation-for="EmployeeId" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="OrderDate">OrderDate</label>
+        <label asp-for="OrderDate">Order Date</label>
         <input asp-for="OrderDate" class="form-control" />
-        <span asp-validation-for="OrderDate" class="text-danger" />
+        <span asp-validation-for="OrderDate" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="RequiredDate">RequiredDate</label>
+        <label asp-for="RequiredDate">Required Date</label>
         <input asp-for="RequiredDate" class="form-control" />
-        <span asp-validation-for="RequiredDate" class="text-danger" />
+        <span asp-validation-for="RequiredDate" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="ShippedDate">ShippedDate</label>
+        <label asp-for="ShippedDate">Shipped Date</label>
         <input asp-for="ShippedDate" class="form-control" />
-        <span asp-validation-for="ShippedDate" class="text-danger" />
+        <span asp-validation-for="ShippedDate" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ShipperId">Shipper</label>
+        <select type="text" asp-for="ShipperId" class="form-control" asp-items="@ViewBag.Shipper">
+            <option selected>Select Shipper</option>
+        </select>
+        <span asp-validation-for="ShipperId" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="ShipVia">ShipVia</label>
         <input asp-for="ShipVia" class="form-control" />
-        <span asp-validation-for="ShipVia" class="text-danger" />
+        <span asp-validation-for="ShipVia" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Freight">Freight</label>
         <input asp-for="Freight" class="form-control" />
-        <span asp-validation-for="Freight" class="text-danger" />
-    </div>
-      <div class="form-group">
-        <label asp-for="ShipName">ShipName</label>
-        <input asp-for="ShipName" class="form-control" />
-        <span asp-validation-for="ShipName" class="text-danger" />
-    </div>
-      <div class="form-group">
-        <label asp-for="ShipAddress">ShipAddress</label>
-        <input asp-for="ShipAddress" class="form-control" />
-        <span asp-validation-for="ShipAddress" class="text-danger" />
-    </div>
-      <div class="form-group">
-        <label asp-for="ShipCity">ShipCity</label>
-        <input asp-for="ShipCity" class="form-control" />
-        <span asp-validation-for="ShipCity" class="text-danger" />
-    </div>
-      <div class="form-group">
-        <label asp-for="ShipRegion">ShipRegion</label>
-        <input asp-for="ShipRegion" class="form-control" />
-        <span asp-validation-for="ShipRegion" class="text-danger" />
-    </div>
-      <div class="form-group">
-        <label asp-for="ShipPostalCode">ShipPostalCode</label>
-        <input asp-for="ShipPostalCode" class="form-control" />
-        <span asp-validation-for="ShipPostalCode" class="text-danger" />
+        <span asp-validation-for="Freight" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label asp-for="ShipCountry">ShipCountry</label>
-        <input asp-for="ShipCountry" class="form-control" />
-        <span asp-validation-for="ShipCountry" class="text-danger" />
+        <label asp-for="ShipName">Ship Name</label>
+        <input asp-for="ShipName" class="form-control" />
+        <span asp-validation-for="ShipName" class="text-danger"></span>
     </div>
-   
+    <div class="form-group">
+        <label asp-for="ShipAddress">Ship Address</label>
+        <input asp-for="ShipAddress" class="form-control" />
+        <span asp-validation-for="ShipAddress" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ShipCity">Ship City</label>
+        <input asp-for="ShipCity" class="form-control" />
+        <span asp-validation-for="ShipCity" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ShipRegion">Ship Region</label>
+        <input asp-for="ShipRegion" class="form-control" />
+        <span asp-validation-for="ShipRegion" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ShipPostalCode">Ship Postal Code</label>
+        <input asp-for="ShipPostalCode" class="form-control" />
+        <span asp-validation-for="ShipPostalCode" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ShipCountry">Ship Country</label>
+        <input asp-for="ShipCountry" class="form-control" />
+        <span asp-validation-for="ShipCountry" class="text-danger"></span>
+    </div>
+
+    <h2 class="content-caption mb-0 d-flex justify-content-between">
+        Order Detail
+        <a class="btn-add add-detail" data-added="0"><i class="la la-plus la-lg">+</i></a>
+    </h2>
+
+    <table class="table table-borderless m-0" id="tbl_posts2">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Unit Price</th>
+                <th>Quantity</th>
+                <th>Discount</th>
+            </tr>
+        </thead>
+        <tbody id="tbl_posts_body2">
+            <tr id="re-0">
+                <td>
+                    <select type="text" asp-for="OrderDetailModels[0].ProductId" class="form-control" asp-items="@ViewBag.Product">
+                        <option selected>Select Product</option>
+                    </select>
+                </td>
+                <td><input asp-for="OrderDetailModels[0].UnitPrice" class="form-control" /></td>
+                <td><input asp-for="OrderDetailModels[0].Quantity" class="form-control" /></td>
+                <td><input asp-for="OrderDetailModels[0].Discount" class="form-control" /></td>
+            </tr>
+
+        </tbody>
+        <tbody id="Detail-2">
+        </tbody>
+
+    </table>
+
     <div class="pt-2 pb-2">
         <button type="submit" class="btn btn-primary">Submit</button>
     </div>
 </form>
 
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+@section Scripts
+    {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //Education
+            var j = 1;
+            //added class to inputs
+            $('a.add-detail').click(function () {
+                $("#Detail-2").append('<tr><td><input id="OrderDetailModels_' + j + '__ProductId" class="form-control" type="text" data-val="true" name="OrderDetailModels[' + j + '].ProductId" value=""/></td><td><input id="OrderDetailModels_' + j + '__UnitPrice" class="form-control" type="text" data-val="true" name="OrderDetailModels[' + j + '].UnitPrice" value=""/></td><td><input id="OrderDetailModels_' + j + '__Quantity" class="form-control" type="text" data-val="true" name="OrderDetailModels[' + j + '].Quantity" value=""/></td><td><input id="OrderDetailModels_' + j + '__Discount" class="form-control" type="text" data-val="true" name="OrderDetailModels[' + j + '].Discount" value=""/></td><td class="text-center"><a class="btn btn-xs delete-detail" edu-data-id="1"><i class="la la-trash la-lg text-danger">-</i></a></td></tr>');
+                j++;
+            });
+            $('#Detail-2').on('click', '.delete-detail', function () {
+                $(this).parent().parent().remove();
+                j--; //decremnt count
+                resetValues(); //call to reset values
+            });
+            function resetValues() {
+                counter = 1; //initialze to 1
+                //looping through tbody
+                $("#Detail-2 tr").each(function () {
+                    //find .school class replace its name value
+                    $(this).find('.ProductId').attr("OrderDetailModels[" + counter + "].ProductId");
+                    $(this).find('.UnitPrice').attr("OrderDetailModels[" + counter + "].UnitPrice");
+                    $(this).find('.Quantity').attr("OrderDetailModels[" + counter + "].Quantity");
+                    $(this).find('.Discount').attr("OrderDetailModels[" + counter + "].Discount");
+                    counter++; //increment count
+                })
+            }
+        });
+    </script>
 }

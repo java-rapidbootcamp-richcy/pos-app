@@ -21,7 +21,7 @@ namespace POS.ViewModel
         public double UnitPrice { get; set; }
 
         [Required]
-        public long Quantity { get; set; }
+        public int Quantity { get; set; }
 
         [Required]
         public double Discount { get; set; }

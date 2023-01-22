@@ -32,7 +32,7 @@ namespace POS.Repository
 
         [Required]
         [Column("quantity_per_unit")]
-        public long QuantityPerUnit { get; set; }
+        public int QuantityPerUnit { get; set; }
 
         [Required]
         [Column("unit_price")]
@@ -52,7 +52,7 @@ namespace POS.Repository
 
         [Required]
         [Column("discontinued")]
-        public string Discontinued { get; set; }
+        public bool Discontinued { get; set; }
 
         public ICollection<OrderDetailEntity> orderDetailsEntities { get; set; }
 

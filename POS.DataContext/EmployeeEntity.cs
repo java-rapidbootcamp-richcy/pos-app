@@ -53,7 +53,7 @@ namespace POS.Repository
 
         [Required]
         [Column("postal_code")]
-        public int PostalCode { get; set; }
+        public string PostalCode { get; set; }
 
         [Required]
         [Column("country")]
